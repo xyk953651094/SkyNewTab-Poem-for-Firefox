@@ -6,6 +6,8 @@ layui.use(["layer"], function(){
     let greetContentI = $("#greetContent");     // 问候内容
     let chineseIconDiv = $("#chineseIconDiv");  // 中国窗体
     let chinesePoemDiv = $("#chinesePoemDiv");  // 中国诗词
+    let poemSentenceI = $("#poemSentence");
+    let poemInfoI = $("#poemInfo");
 
     // 问候语
     function setGreet() {
@@ -78,6 +80,16 @@ layui.use(["layer"], function(){
         });
     }
 
+    // 获取诗词
+    function getPoem() {
+        jinrishici.load(function(result) {
+            // 自己的处理逻辑
+            poemSentenceI.html(result.data.content);
+            poemInfoI.html("【" + result.data.origin.dynasty + "】" + result.data.origin.author + "《" + result.data.origin.title + "》")
+            console.log(result)
+        });
+    }
+
     // 显示随机颜色主题
     function setColorTheme() {
         let randomNum = Math.floor(Math.random() * themeArray.length);
@@ -124,6 +136,7 @@ layui.use(["layer"], function(){
     }
 
     setGreet();       // 显示问候语
-    getWeather();
+    getWeather();     // 获取天气
+    getPoem();        // 获取诗词
     setColorTheme();  // 设置随机颜色主题
 });
