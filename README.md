@@ -12,7 +12,7 @@
 基于 Html + Javascript + CSS + Layui。   
 * 节气来源：https://www.mxnzp.com 
 * 天气来源：https://www.jinrishici.com 
-* 天气来源：https://www.jinrishici.com  
+* 诗词来源：https://www.jinrishici.com  
 * 图标来源：https://www.iconfont.cn 以及 https://pixso.cn  
 
 ## 效果展示
