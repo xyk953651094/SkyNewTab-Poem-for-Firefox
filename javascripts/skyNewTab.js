@@ -61,7 +61,7 @@ layui.use(["layer"], function(){
     }
 
     // 获取天气
-    function getWeather() {
+    function setWeather() {
         $.ajax({
             url: "https://v2.jinrishici.com/info",
             type: "GET",
@@ -81,22 +81,27 @@ layui.use(["layer"], function(){
     }
 
     // 获取诗词
-    function getPoem() {
+    function setPoem() {
         jinrishici.load(function(result) {
             // 自己的处理逻辑
             poemSentenceI.html(result.data.content);
             poemInfoI.html("【" + result.data.origin.dynasty + "】" + result.data.origin.author + "《" + result.data.origin.title + "》")
-            console.log(result)
         });
     }
 
     // 显示随机颜色主题
     function setColorTheme() {
-        let randomNum = Math.floor(Math.random() * themeArray.length);
+        let hour = new Date().getHours();
+        let theme = lightThemeArray;
+        if( 18 < hour || hour < 6) {
+            theme = darkThemeArray;
+        }
+        let randomNum = Math.floor(Math.random() * theme.length);  // 随机选择一种主题
+
         let frostedGlass = $(".frostedGlass")
-        $("body").css("background-color", themeArray[randomNum].bodyBackgroundColor);
-        frostedGlass.css("color", getFontColor(themeArray[randomNum].frostedGlassBackgroundColor));
-        frostedGlass.css("background-color", themeArray[randomNum].frostedGlassBackgroundColor);
+        $("body").css("background-color", theme[randomNum].bodyBackgroundColor);
+        frostedGlass.css("color", getFontColor(theme[randomNum].frostedGlassBackgroundColor));
+        frostedGlass.css("background-color", theme[randomNum].frostedGlassBackgroundColor);
 
         //随机显示中国窗体
         let index = Math.floor((Math.random() * chineseIconArray.length));
@@ -106,27 +111,33 @@ layui.use(["layer"], function(){
         let chineseIconI = $("#chineseIconI");
         if (chineseIconI.length > 0) {
             chineseIconI.css({
-                "color": getFontColor(themeArray[randomNum].bodyBackgroundColor),
+                "color": getFontColor(theme[randomNum].bodyBackgroundColor),
             });
-            if(tempClassName === "icon-chuangge4"){
+            // 调整窗体显示效果
+            if(tempClassName === "icon-chuangge2" || tempClassName === "icon-chuangge4"){
                 chineseIconI.css({
                     "transform": "rotate(90deg)"
+                });
+            }
+            if(tempClassName === "icon-chuangge6" || tempClassName === "icon-chuangge8"){
+                chineseIconI.css({
+                    "transform": "rotate(45deg) scale(0.8)"
                 });
             }
         }
 
         // 设置字体颜色
         greetIconI.css({
-            "color": getFontColor(themeArray[randomNum].bodyBackgroundColor),
+            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
         })
 
         greetContentI.css({
-            "color": getFontColor(themeArray[randomNum].bodyBackgroundColor),
+            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
         })
 
         // 设置中国诗词字体颜色
         chinesePoemDiv.css({
-            "color": getFontColor(themeArray[randomNum].bodyBackgroundColor),
+            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
         });
     }
 
@@ -136,7 +147,7 @@ layui.use(["layer"], function(){
     }
 
     setGreet();       // 显示问候语
-    getWeather();     // 获取天气
-    getPoem();        // 获取诗词
+    setWeather();     // 获取天气
+    setPoem();        // 获取诗词
     setColorTheme();  // 设置随机颜色主题
 });
