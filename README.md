@@ -16,7 +16,6 @@
 * 图标来源：https://www.iconfont.cn 以及 https://pixso.cn  
 
 ## 效果展示
-<img width="1440" alt="截屏2022-08-26 10 57 37" src="https://user-images.githubusercontent.com/28004442/186808090-ae80cdde-c754-4d99-b04a-79367a60c95f.png">
-
 <img width="1440" alt="截屏2022-08-26 10 58 24" src="https://user-images.githubusercontent.com/28004442/186808182-7f409e5e-b689-4b9b-9132-42231e0ca835.png">
 
+<img width="1440" alt="截屏2022-08-26 11 05 44" src="https://user-images.githubusercontent.com/28004442/186809041-ec86e3e4-90c1-4488-9694-c42f2f9642a4.png">
