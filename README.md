@@ -1,4 +1,4 @@
-# SkyNewTab Lite for Firefox
+# SkyNewTab Poem for Firefox
 * Firefox 附加组件商店：（即将发布，敬请期待）
 * 语言支持：中文，English
 
