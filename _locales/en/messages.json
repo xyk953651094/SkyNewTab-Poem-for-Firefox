@@ -1,14 +1,14 @@
 {
   "extensionName":{
-    "message": "Sky New Tab Poem",
+    "message": "SkyNewTab Poem",
     "description": "extension_name"
   },
   "extensionDescription":{
-    "message": "Sky New Tab Poem by XYK",
+    "message": "SkyNewTab Poem by XYK",
     "description": "extension_description"
   },
   "extensionDefaultTitle":{
-    "message": "Sky New Tab Poem",
+    "message": "SkyNewTab Poem",
     "description": "extension_default_title"
   },
 
@@ -35,24 +35,5 @@
   "greetDawn":{
     "message": "Before Dawn",
     "description": "greetDawn"
-  },
-
-  "getImageError":{
-    "message": "Error: Failed to get the image's info, please try again later",
-    "description": "getImageError"
-  },
-
-  "downloadImage":{
-    "message": "Download image",
-    "description": "downloadImage"
-  },
-  "gotoImage":{
-    "message": "View image in Unsplash.com",
-    "description": "gotoImage"
-  },
-
-  "searchPlaceholder":{
-    "message": "Enter search content",
-    "description": "searchPlaceholder"
   }
 }

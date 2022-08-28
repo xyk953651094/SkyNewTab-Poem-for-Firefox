@@ -13,17 +13,17 @@
     "persistent": false
   },
   "icons": {
-    "16": "/assets/skyNewTabIcon_16.png",
-    "32": "/assets/skyNewTabIcon_32.png",
-    "48": "/assets/skyNewTabIcon_48.png",
-    "128": "/assets/skyNewTabIcon_128.png"
+    "16": "/assets/icon_16.png",
+    "32": "/assets/icon_32.png",
+    "48": "/assets/icon_48.png",
+    "128": "/assets/icon_128.png"
   },
   "page_action": {
     "default_icon": {
-      "16": "/assets/skyNewTabIcon_16.png",
-      "32": "/assets/skyNewTabIcon_32.png",
-      "48": "/assets/skyNewTabIcon_48.png",
-      "128": "/assets/skyNewTabIcon_128.png"
+      "16": "/assets/icon_16.png",
+      "32": "/assets/icon_32.png",
+      "48": "/assets/icon_48.png",
+      "128": "/assets/icon_128.png"
     },
     "default_title": "__MSG_extensionDefaultTitle__"
   },
