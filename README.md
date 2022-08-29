@@ -12,7 +12,7 @@
 * 节气来源：https://www.mxnzp.com 
 * 天气来源：https://www.jinrishici.com 
 * 诗词来源：https://www.jinrishici.com  
-* 图标来源：https://www.iconfont.cn 以及 https://pixso.cn  
+* 图标来源：https://www.iconfont.cn  
 
 ## 效果展示
 <img width="1440" alt="截屏2022-08-26 10 58 24" src="https://user-images.githubusercontent.com/28004442/186808182-7f409e5e-b689-4b9b-9132-42231e0ca835.png">
