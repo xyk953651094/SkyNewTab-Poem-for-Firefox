@@ -15,8 +15,8 @@
 * 图标来源：https://www.iconfont.cn  
 
 ## 安装
-* [Firefox 附加组件商店](https://addons.mozilla.org/zh-CN/firefox/addon/sky诗词-新标签页 "跳转至Firefox 附加组件商店")
-* 打开Firefox浏览器 -> 右上角应用程序菜单 -> 扩展和主题 -> 齿轮按钮 -> 从文件安装附加组件
+* 方法一：[Firefox 附加组件商店](https://addons.mozilla.org/zh-CN/firefox/addon/sky诗词-新标签页 "跳转至Firefox 附加组件商店")
+* 方法二：下载本页面提供的压缩包 -> 打开Firefox浏览器 -> 右上角应用程序菜单 -> 扩展和主题 -> 齿轮按钮 -> 从文件安装附加组件
 
 ## 效果展示
 <img width="1440" alt="截屏2022-08-26 10 58 24" src="https://user-images.githubusercontent.com/28004442/186808182-7f409e5e-b689-4b9b-9132-42231e0ca835.png">
