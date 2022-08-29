@@ -1,11 +1,10 @@
 # SkyNewTab Poem for Firefox
-* Firefox 附加组件商店：（即将发布，敬请期待）
+* [Firefox 附加组件商店](https://addons.mozilla.org/zh-CN/firefox/addon/sky诗词-新标签页 "跳转至Firefox 附加组件商店")
 * 语言支持：中文，English
 
 ## 声明
 * 诗词由第三方网站提供，内容不代表作者任何观点。  
 * 本作品由作者个人出于学习目的开发，由于成本原因，难以保证不同型号设备下的最终品质，后续尽量完善。
-* 本作品由作者个人出于学习目的开发，由于成本原因，插件商店版可能与此版本存在功能差异。
 
 ## 简介
 适用于Firefox的新标签页插件。  
