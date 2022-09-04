@@ -2,37 +2,19 @@ layui.use(["layer"], function(){
     let $ = layui.jquery;
     let layer = layui.layer;
 
-    let greetIconI = $("#greetIcon")            // 问候图标
-    let greetContentI = $("#greetContent");     // 问候内容
-    let chineseIconDiv = $("#chineseIconDiv");  // 中国窗体
-    let chinesePoemDiv = $("#chinesePoemDiv");  // 中国诗词
+    let greetIconI = $("#greetIcon")             // 问候图标
+    let greetContentI = $("#greetContent");      // 问候内容
+    let holidayContentI = $("#holidayContent");  // 节气内容
+    let weatherContentI = $("#weatherContent");  // 天气内容
+    let chineseIconDiv = $("#chineseIconDiv");   // 中国窗体
+    let chinesePoemDiv = $("#chinesePoemDiv");   // 中国诗词
+    let poemIconI = $("#poemIcon");
     let poemSentenceI = $("#poemSentence");
     let poemInfoI = $("#poemInfo");
 
     // 问候语
     function setGreet() {
-        let now = new Date();
-        let hour = now.getHours();
-        let greetContent, greetIcon;
-        if (hour >= 6 && hour < 11) {
-            greetContent = getMessage("greetMorning");
-            greetIcon = "icon-sunrise";
-        } else if (hour >= 11 && hour < 14) {
-            greetContent = getMessage("greetNoon");
-            greetIcon = "icon-sun_max";
-        } else if (hour >= 14 && hour < 17) {
-            greetContent = getMessage("greetAfternoon");
-            greetIcon = "icon-sunset";
-        } else if (hour >= 17 && hour < 20) {
-            greetContent = getMessage("greetEvening");
-            greetIcon = "icon-sunset";
-        } else if (hour >= 20 && hour < 24) {
-            greetContent = getMessage("greetNight");
-            greetIcon = "icon-moon_stars";
-        } else {
-            greetContent = getMessage("greetDawn");
-            greetIcon = "icon-moon_stars";
-        }
+        let {greetContent, greetIcon} = getGreet();
         greetIconI.removeClass();
         greetIconI.addClass("iconfont " + greetIcon);
         greetContentI.html(greetContent);
@@ -51,7 +33,7 @@ layui.use(["layer"], function(){
                     if(result.data.solarTerms.indexOf("后") === -1) {
                         solarTerms = "今日" + solarTerms;
                     }
-                    greetContentI.append("&nbsp;|&nbsp;" + solarTerms)
+                    holidayContentI.html("&nbsp;|&nbsp;" + solarTerms);
                 }
             },
             error: function (err) {
@@ -68,7 +50,7 @@ layui.use(["layer"], function(){
             success: function (result) {
                 if (result.status === "success") {
                     let weatherData = result.data.weatherData;
-                    greetContentI.append("&nbsp;|&nbsp;" + weatherData.weather);
+                    weatherContentI.html("&nbsp;|&nbsp;" + weatherData.weather);
                 }
                 else {
 
@@ -84,6 +66,7 @@ layui.use(["layer"], function(){
     function setPoem() {
         jinrishici.load(function(result) {
             // 自己的处理逻辑
+            poemIconI.css({'display': 'inline-block'})
             poemSentenceI.html(result.data.content);
             poemInfoI.html("【" + result.data.origin.dynasty + "】" + result.data.origin.author + "《" + result.data.origin.title + "》")
         });
@@ -127,23 +110,13 @@ layui.use(["layer"], function(){
         }
 
         // 设置字体颜色
-        greetIconI.css({
-            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
-        })
-
-        greetContentI.css({
-            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
-        })
+        greetIconI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        greetContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        holidayContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        weatherContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
 
         // 设置中国诗词字体颜色
-        chinesePoemDiv.css({
-            "color": getFontColor(theme[randomNum].bodyBackgroundColor),
-        });
-    }
-
-    // 国际化
-    function getMessage(messageName) {
-        return chrome.i18n.getMessage(messageName);
+        chinesePoemDiv.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) });
     }
 
     setGreet();       // 显示问候语

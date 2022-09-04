@@ -56,6 +56,10 @@ html, body {
     letter-spacing: 1px;
 }
 
+#poemIcon {
+    display: none;
+}
+
 /* 布局 - 样式水平垂直居中 */
 .center {
     display: flex;

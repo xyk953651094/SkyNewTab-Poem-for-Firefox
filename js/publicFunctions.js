@@ -35,3 +35,35 @@ function getDateTime() {
     if (day < 10) { day = '0' + day }
     return year.toString() + month.toString() + day.toString();
 }
+
+// 获取问候
+function getGreet() {
+    let now = new Date();
+    let hour = now.getHours();
+    let greetContent, greetIcon;
+    if (hour >= 6 && hour < 11) {
+        greetContent = getMessage('greetMorning');
+        greetIcon = 'icon-sunrise';
+    } else if (hour >= 11 && hour < 14) {
+        greetContent = getMessage('greetNoon');
+        greetIcon = 'icon-sun_max';
+    } else if (hour >= 14 && hour < 17) {
+        greetContent = getMessage('greetAfternoon');
+        greetIcon = 'icon-sunset';
+    } else if (hour >= 17 && hour < 20) {
+        greetContent = getMessage('greetEvening');
+        greetIcon = 'icon-sunset';
+    } else if (hour >= 20 && hour < 24) {
+        greetContent = getMessage('greetNight');
+        greetIcon = 'icon-moon_stars';
+    } else {
+        greetContent = getMessage('greetDawn');
+        greetIcon = 'icon-moon_stars';
+    }
+    return {greetContent, greetIcon};
+}
+
+// 国际化
+function getMessage(messageName) {
+    return chrome.i18n.getMessage(messageName);
+}
