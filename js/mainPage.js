@@ -94,7 +94,8 @@ layui.use(["layer"], function(){
         let chineseIconI = $("#chineseIconI");
         if (chineseIconI.length > 0) {
             chineseIconI.css({
-                "color": getFontColor(theme[randomNum].bodyBackgroundColor),
+                // "color": getFontColor(theme[randomNum].bodyBackgroundColor),
+                "color": getThemeColor(theme[randomNum].bodyBackgroundColor),
             });
             // 调整窗体显示效果
             if(tempClassName === "icon-chuangge2" || tempClassName === "icon-chuangge4"){
@@ -110,13 +111,17 @@ layui.use(["layer"], function(){
         }
 
         // 设置字体颜色
-        greetIconI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
-        greetContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
-        holidayContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
-        weatherContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        // greetIconI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        // greetContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        // holidayContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        // weatherContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
+        // chinesePoemDiv.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) });
 
-        // 设置中国诗词字体颜色
-        chinesePoemDiv.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) });
+        greetIconI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
+        greetContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
+        holidayContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
+        weatherContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
+        chinesePoemDiv.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) });
     }
 
     setGreet();       // 显示问候语

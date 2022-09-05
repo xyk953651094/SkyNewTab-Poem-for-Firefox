@@ -1,3 +1,10 @@
+// 根据图片背景颜色获取元素反色效果
+function getThemeColor(color) {
+    color = '0x' + color.replace('#', '');
+    let newColor = '000000' + (0xFFFFFF - color).toString(16);
+    return '#' + newColor.substring(newColor.length-6, newColor.length);
+}
+
 // 根据背景颜色改变字体颜色效果
 function getFontColor(color) {
     let rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
