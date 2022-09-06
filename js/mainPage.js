@@ -2,15 +2,16 @@ layui.use(["layer"], function(){
     let $ = layui.jquery;
     let layer = layui.layer;
 
-    let greetIconI = $("#greetIcon")             // 问候图标
-    let greetContentI = $("#greetContent");      // 问候内容
-    let holidayContentI = $("#holidayContent");  // 节气内容
-    let weatherContentI = $("#weatherContent");  // 天气内容
-    let chineseIconDiv = $("#chineseIconDiv");   // 中国窗体
-    let chinesePoemDiv = $("#chinesePoemDiv");   // 中国诗词
+    let greetIconI = $("#greetIcon")                // 问候图标
+    let greetContentI = $("#greetContent");         // 问候内容
+    let holidayContentI = $("#holidayContent");     // 节气内容
+    let weatherContentI = $("#weatherContent");     // 天气内容
+    let chineseIconDiv = $("#chineseIconDiv");      // 中国窗体
+    let chinesePoemDiv = $("#chinesePoemDiv");      // 中国诗词
     let poemIconI = $("#poemIcon");
     let poemSentenceI = $("#poemSentence");
     let poemInfoI = $("#poemInfo");
+    let chineseObjectDiv = $("#chineseObjectDiv");  // 中国物件
 
     // 问候语
     function setGreet() {
@@ -86,16 +87,16 @@ layui.use(["layer"], function(){
         frostedGlass.css("color", getFontColor(theme[randomNum].frostedGlassBackgroundColor));
         frostedGlass.css("background-color", theme[randomNum].frostedGlassBackgroundColor);
 
-        //随机显示中国窗体
+        // 随机显示中国窗体
         let index = Math.floor((Math.random() * chineseIconArray.length));
         let tempClassName = chineseIconArray[index];
-        chineseIconDiv.html("<i id='chineseIconI' class='iconfont " + tempClassName + "'></i>")
+        chineseIconDiv.html("<i id='chineseIconI' class='iconfont " + tempClassName + "'></i>");
 
         let chineseIconI = $("#chineseIconI");
         if (chineseIconI.length > 0) {
             chineseIconI.css({
                 // "color": getFontColor(theme[randomNum].bodyBackgroundColor),
-                "color": getThemeColor(theme[randomNum].bodyBackgroundColor),
+                "color": theme[randomNum].frostedGlassBackgroundColor,
             });
             // 调整窗体显示效果
             if(tempClassName === "icon-chuangge2" || tempClassName === "icon-chuangge4"){
@@ -105,9 +106,20 @@ layui.use(["layer"], function(){
             }
             if(tempClassName === "icon-chuangge6" || tempClassName === "icon-chuangge8"){
                 chineseIconI.css({
-                    "transform": "rotate(45deg) scale(0.8)"
+                    "transform": "rotate(45deg) scale(0.7)"
                 });
             }
+        }
+
+        // 随机显示中国物件
+        let chineseObjectIndex = Math.floor((Math.random() * chineseObjectArray.length));
+        let objectClassName = chineseObjectArray[chineseObjectIndex];
+        chineseObjectDiv.html("<i id='chineseObjectI' class='iconfont " + objectClassName + "'></i>");
+        let chineseObjectI = $("#chineseObjectI");
+        if (chineseObjectI.length > 0) {
+            chineseObjectI.css({
+                "color": theme[randomNum].frostedGlassBackgroundColor,
+            });
         }
 
         // 设置字体颜色
@@ -117,11 +129,11 @@ layui.use(["layer"], function(){
         // weatherContentI.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) })
         // chinesePoemDiv.css({ "color": getFontColor(theme[randomNum].bodyBackgroundColor) });
 
-        greetIconI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
-        greetContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
-        holidayContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
-        weatherContentI.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) })
-        chinesePoemDiv.css({ "color": getThemeColor(theme[randomNum].bodyBackgroundColor) });
+        greetIconI.css({ "color": theme[randomNum].frostedGlassBackgroundColor })
+        greetContentI.css({ "color": theme[randomNum].frostedGlassBackgroundColor })
+        holidayContentI.css({ "color": theme[randomNum].frostedGlassBackgroundColor })
+        weatherContentI.css({ "color": theme[randomNum].frostedGlassBackgroundColor })
+        chinesePoemDiv.css({ "color": theme[randomNum].frostedGlassBackgroundColor });
     }
 
     setGreet();       // 显示问候语
