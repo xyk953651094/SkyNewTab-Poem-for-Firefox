@@ -34,7 +34,7 @@ layui.use(["layer"], function(){
                     if(result.data.solarTerms.indexOf("后") === -1) {
                         solarTerms = "今日" + solarTerms;
                     }
-                    holidayContentI.html("&nbsp;|&nbsp;" + solarTerms);
+                    holidayContentI.html("｜" + solarTerms);
                 }
             },
             error: function (err) {
@@ -51,7 +51,7 @@ layui.use(["layer"], function(){
             success: function (result) {
                 if (result.status === "success") {
                     let weatherData = result.data.weatherData;
-                    weatherContentI.html("&nbsp;|&nbsp;" + weatherData.weather);
+                    weatherContentI.html("｜" + weatherData.weather);
                 }
                 else {
 
