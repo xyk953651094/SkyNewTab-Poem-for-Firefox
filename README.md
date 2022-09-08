@@ -19,8 +19,6 @@
 * 方法二：下载本页面提供的 xpi 文件安装
 
 ## 效果展示
-<img width="1440" alt="截屏2022-08-26 10 58 24" src="https://user-images.githubusercontent.com/28004442/186808182-7f409e5e-b689-4b9b-9132-42231e0ca835.png">
+<img width="1440" alt="截屏2022-09-08 19 01 06" src="https://user-images.githubusercontent.com/28004442/189105986-d1df37d9-5da7-4bf4-934f-224222e0a74d.png">
 
-<img width="1440" alt="截屏2022-08-26 11 06 35" src="https://user-images.githubusercontent.com/28004442/186809145-52b2a55a-00a6-4c4d-93bc-0ea107bb4482.png">
-
-
+<img width="1440" alt="截屏2022-09-08 19 01 35" src="https://user-images.githubusercontent.com/28004442/189106062-fe976782-13ff-454b-b1b0-d3870389823a.png">
