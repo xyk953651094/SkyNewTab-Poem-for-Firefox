@@ -50,8 +50,9 @@ layui.use(["layer"], function(){
             type: "GET",
             success: function (result) {
                 if (result.status === "success") {
-                    let weatherData = result.data.weatherData;
-                    weatherContentI.html("｜" + weatherData.weather);
+                    if(result.data.weatherData) {
+                        weatherContentI.html("｜" + result.data.weatherData.weather);
+                    }
                 }
                 else {
 
